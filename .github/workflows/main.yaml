@@ -23,5 +23,5 @@ jobs:
           body: 'This pull request was automatically created by Github Actions.'
           labels: 'auto-generated'
           base: dev
-          head: ${{ github.ref }}
+          branch: ${{ github.ref }}
         if: startsWith(github.ref, 'refs/heads/feature/')
