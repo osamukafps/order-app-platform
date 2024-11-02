@@ -22,8 +22,6 @@ jobs:
           title: 'Feature: ${{ github.ref }}'
           body: 'This pull request was automatically created by Github Actions.'
           labels: 'auto-generated'
-          base:
-            - dev  
-            - homologacao  
+          base: dev
           head: ${{ github.ref }}
-        if: ${{ github.ref == 'refs/heads/feature/*' }}
+        if: startsWith(github.ref, 'refs/heads/feature/')
