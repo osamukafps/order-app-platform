@@ -1,0 +1,27 @@
+name: CI/CD
+
+on:
+  push:
+    branches: [ feature/*, dev, homologacao ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - name: Install Dependencies
+        run: npm install
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          title: 'Feature: ${{ github.ref }}'
+          body: 'This pull request was automatically created by Github Actions.'
+          labels: 'auto-generated'
+          base: dev
+          branch: ${{ github.ref }}
+        if: startsWith(github.ref, 'refs/heads/feature/')
