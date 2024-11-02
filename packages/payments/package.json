@@ -1,0 +1,26 @@
+{
+  "name": "payments",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "Samuel Hipólito <samuelhplt@gmail.com>",
+  "homepage": "https://github.com/osamukafps/order-app-platform#readme",
+  "license": "ISC",
+  "main": "lib/payments.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/osamukafps/order-app-platform.git"
+  },
+  "scripts": {
+    "test": "node ./__tests__/payments.test.js"
+  },
+  "bugs": {
+    "url": "https://github.com/osamukafps/order-app-platform/issues"
+  }
+}
