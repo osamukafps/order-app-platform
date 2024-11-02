@@ -14,7 +14,7 @@ jobs:
         with:
           node-version: '18'
       - name: Install Dependencies
-        run: npm ci
+        run: npm install
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
